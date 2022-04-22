@@ -1,0 +1,59 @@
+<div class="container">
+
+  <div class="row">
+    <div class="col-md-5">
+      <form  #heroForm   >
+        <div class="mb-3">
+          <label for="heroId" class="form-label">Hero ID</label>
+          <input type="text" class="form-control" id="heroId" aria-describedby="emailHelp" #heroId>
+        </div>
+        <div class="mb-3">
+          <label for="heroName" class="form-label">Hero Name</label>
+          <input type="text" class="form-control" id="heroName" #heroName>
+        </div>
+        <div class="mb-3">
+          <label for="heroPower" class="form-label">Hero Power</label>
+          <input type="text" class="form-control" id="heroPower" #heroPower>
+        </div>
+
+        <div>
+          <button type="submit" (click)="addHero(heroId, heroName, heroPower );heroForm.reset()" class="btn btn-primary">Submit</button>
+          <!-- <button type="button" (click)="save()" class="btn btn-success ms-2">Save Heroes</button> -->
+          <!-- <button type="button" (click)="getHeroesList()" class="btn btn-warning ms-2">Fetch Heroes</button> -->
+        </div>
+      </form>
+    </div>
+
+    <div class="col-md-7 text-center">
+
+      <table class="table table-striped">
+        <thead class="table-dark">
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Hero Name</th>
+            <th scope="col">Power</th>
+            <th scope="col">Detail</th>
+            <th scope="col">Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let hero of heroList; index as i">
+            <th>{{hero.id}}</th>
+            <td>{{hero.heroName}}</td>
+            <td>{{hero.power}}</td>
+            <td><Button class="btn btn-sm btn-success" [routerLink]="['/hero', hero.id]">Visit</Button></td>
+            <td><i class="bi bi-trash3-fill"></i></td>
+          </tr>
+        </tbody>
+      </table>
+
+       <!-- <span *ngIf="fetching">Loading...</span> -->
+
+
+
+
+    </div>
+
+  </div>
+
+</div>

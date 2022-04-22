@@ -1,0 +1,13 @@
+<div *ngIf="hero">
+    <div class="container mt-4">
+        <h3>{{hero.heroName}}'s data</h3>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Edit name" aria-label="Edit name "
+                aria-describedby="button-addon2" value="{{hero.heroName}}" >
+            <button class="btn btn-outline-secondary" type="button" id="button-addon2">Save</button>
+        </div>
+
+        <h4>{{hero.power}}</h4>
+        <button routerLink="/heroes" class="btn btn-outline-primary" type="button" id="button-addon3">Back</button>
+    </div>
+</div>
